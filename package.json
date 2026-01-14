@@ -1,0 +1,79 @@
+{
+  "name": "text-case-transformer",
+  "displayName": "text-case-transformer",
+  "description": "Convert text case",
+  "version": "0.0.1",
+  "publisher": "zmhuanf",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "text-case-transformer.camelCase",
+        "title": "Transform: Camel Case (helloWorld)"
+      },
+      {
+        "command": "text-case-transformer.pascalCase",
+        "title": "Transform: Pascal Case (HelloWorld)"
+      },
+      {
+        "command": "text-case-transformer.snakeCase",
+        "title": "Transform: Snake Case (hello_world)"
+      },
+      {
+        "command": "text-case-transformer.upperSnakeCase",
+        "title": "Transform: Upper Snake Case (Hello_world)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "text-case-transformer.camelCase",
+        "key": "ctrl+numpad1",
+        "mac": "cmd+numpad1",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "text-case-transformer.pascalCase",
+        "key": "ctrl+numpad2",
+        "mac": "cmd+numpad2",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "text-case-transformer.snakeCase",
+        "key": "ctrl+numpad4",
+        "mac": "cmd+numpad4",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "text-case-transformer.upperSnakeCase",
+        "key": "ctrl+numpad5",
+        "mac": "cmd+numpad5",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.70.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.52.0",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
